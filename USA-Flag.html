@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>USA Flag</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="usa-flag" width="500" height="300"></canvas>
+
+  <script>
+    var canvas = document.getElementById("usa-flag");
+    var context = canvas.getContext("2d");
+
+    // Draw the flag background
+    context.fillStyle = "#B22234";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Draw the white stripes
+    context.fillStyle = "white";
+    var stripeHeight = canvas.height / 13;
+    for (var i = 0; i < 13; i++) {
+      if (i % 2 === 0) {
+        context.fillRect(0, i * stripeHeight, canvas.width, stripeHeight);
+      }
+    }
+
+    // Draw the blue rectangle
+    var blueWidth = canvas.width * 0.4;
+    var blueHeight = stripeHeight * 7;
+    context.fillStyle = "#3C3B6E";
+    context.fillRect(0, 0, blueWidth, blueHeight);
+
+    // Draw the stars
+    var starSize = 10;
+    var starSpacing = 20;
+    var starsPerRow = 6;
+    var starsRows = 5;
+    var starOffsetX = (blueWidth - (starsPerRow * (starSize + starSpacing) - starSpacing)) / 2;
+    var starOffsetY = (blueHeight - (starsRows * (starSize + starSpacing) - starSpacing)) / 2;
+    context.fillStyle = "white";
+
+    for (var row = 0; row < starsRows; row++) {
+      for (var col = 0; col < starsPerRow; col++) {
+        var x = starOffsetX + col * (starSize + starSpacing);
+        var y = starOffsetY + row * (starSize + starSpacing);
+        drawStar(context, x, y, starSize);
+      }
+    }
+
+    // Function to draw a star
+    function drawStar(ctx, x, y, size) {
+      ctx.beginPath();
+      for (var i = 0; i < 5; i++) {
+        ctx.lineTo(
+          x + size * Math.cos((i * 4 * Math.PI) / 5),
+          y + size * Math.sin((i * 4 * Math.PI) / 5)
+        );
+        ctx.lineTo(
+          x + (size / 2) * Math.cos(((i + 0.5) * 4 * Math.PI) / 5),
+          y + (size / 2) * Math.sin(((i + 0.5) * 4 * Math.PI) / 5)
+        );
+      }
+      ctx.closePath();
+      ctx.fill();
+    }
+  </script>
+</body>
+</html>
