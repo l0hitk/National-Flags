@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> New Zealand Flag</title>
+    <style>
+body {
+            width: 100%;
+            height: 30vh;
+            display: grid;
+            place-items: center;
+        }
+        h2 {
+            text-align: center;
+            top: 20px;
+        }
+.flag {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.new_zealand {
+  background: #012169;
+}
+
+.new_zealand__left__top {
+  width: 50%;
+  height: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.new_zealand__plus {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 7px white) drop-shadow(7px 0 white)
+    drop-shadow(-7px 0 white) drop-shadow(0 -7px white);
+}
+
+.new_zealand__plus .plus {
+  width: 100%;
+  height: 100%;
+  background-color: #c8102e;
+  clip-path: polygon(
+    0% 40%,
+    43% 40%,
+    43% 0%,
+    58% 0%,
+    58% 40%,
+    100% 40%,
+    100% 60%,
+    58% 60%,
+    58% 100%,
+    43% 100%,
+    43% 60%,
+    0% 60%
+  );
+}
+
+.new_zealand__x {
+  position: absolute;
+  inset: 0;
+}
+
+.new_zealand__x > .x__strip-1,
+.new_zealand__x > .x__strip-2 {
+  position: relative;
+  background-color: white;
+  width: 150%;
+  height: 20px;
+  transform: rotate(-32deg) scalex(1.2) translate(-13px, 15px);
+}
+
+.new_zealand__x > .x__strip-2 {
+  transform: rotate(32deg) scalex(1.2) translate(13px, 37px);
+}
+
+.new_zealand__x > .x__strip-1::before,
+.new_zealand__x > .x__strip-1::after,
+.new_zealand__x > .x__strip-2::before,
+.new_zealand__x > .x__strip-2::after {
+  position: absolute;
+  background-color: #c8102e;
+  content: "";
+  width: 35%;
+  height: 14px;
+}
+
+.new_zealand__x > .x__strip-1::before,
+.new_zealand__x > .x__strip-2::before {
+  top: 3px;
+}
+
+.new_zealand__x > .x__strip-1::after,
+.new_zealand__x > .x__strip-2::after {
+  bottom: 3px;
+  left: 35%;
+}
+
+.new_zealand__star_wrap,
+.new_zealand__star {
+  width: 35px;
+  aspect-ratio: 1;
+  background-color: white;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  display: grid;
+  place-items: center;
+}
+
+.new_zealand__star_wrap {
+  position: absolute;
+}
+
+.new_zealand__star_wrap .new_zealand__star {
+  background-color: #c8102e;
+  width: 65%;
+}
+
+.new_zealand__star_wrap:nth-child(2) {
+  left: 71%;
+  top: 11%;
+}
+.new_zealand__star_wrap:nth-child(3) {
+  left: 59%;
+  top: 34%;
+}
+.new_zealand__star_wrap:nth-child(4) {
+  left: 81%;
+  top: 30%;
+  width: 30px;
+}
+.new_zealand__star_wrap:nth-child(5) {
+  left: 70%;
+  top: 70%;
+  width: 40px;
+}
+    </style>
+</head>
+<body>
+    
+
+<h3>New Zealand</h3>
+
+<div class="flag new_zealand">
+  <div class="new_zealand__left__top">
+    <div class="new_zealand__plus">
+      <div class="plus"></div>
+    </div>
+    <div class="new_zealand__x">
+      <div class="x__strip-1"></div>
+      <div class="x__strip-2"></div>
+    </div>
+  </div>
+
+  <div class="new_zealand__star_wrap">
+    <div class="new_zealand__star"></div>
+  </div>
+  <div class="new_zealand__star_wrap">
+    <div class="new_zealand__star"></div>
+  </div>
+  <div class="new_zealand__star_wrap">
+    <div class="new_zealand__star"></div>
+  </div>
+  <div class="new_zealand__star_wrap">
+    <div class="new_zealand__star"></div>
+  </div>
+</div>
+
+
+</body>
+</html>
